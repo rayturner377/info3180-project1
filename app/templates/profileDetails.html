@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class = "individual">
+    <div class="photo">
+        <img src="{{ url_for('static',filename='upload/'+client.photo.replace(' ','_'))}}">
+    </div>    
+    <div class="detail">
+        <h2>{{ client.first_name }} {{ client.last_name }}</h2>
+        <p>{{ client.email }}</p>
+        <p>{{ client.location }}</p>
+        <p>{{ client.date }}</p>
+    </div>   
+    <div class="about">
+        <h3>About Me</h3>
+        <p>{{ client.bio }}</p>
+    </div> 
+    
+    <div class="bb">
+        <button class="button1">Send Message</button>
+    </div> 
+    <div class="bc">
+            <button class="button2">Follow</button>
+    </div> 
+
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h2>Profiles</h2>
+<div class = "profiles">
+    {% for profile in profile_list %}
+        <div class="card">  
+            <div class="col1">
+                <img src="{{ url_for('static',filename='upload/'+profile.photo.replace(' ','_'))}}">
+            </div>        
+            
+            <div class="col2">
+                <h2>{{ profile.first_name }} {{ profile.last_name }}</h2>
+                <p>{{ profile.gender }}</p>
+                <p>{{ profile.location }}</p>
+            </div>
+
+            <div class="col3">
+                <form action="{{ url_for('details',userid=profile.id) }}" method="post">
+                    <button class="button" type="submit">View Profile</button>
+                </form>
+            </div>
+
+        </div>
+        
+    {% endfor %}
+</div>
+{% endblock %}
