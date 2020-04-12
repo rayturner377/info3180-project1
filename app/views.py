@@ -13,7 +13,7 @@ from .models import UserProfile
 from .forms import UserProfileForm
 
 
-@app.route('/',methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def home():
     """Render website's home page."""
     return render_template('home.html')
@@ -33,7 +33,7 @@ def about():
 def profile():
     form = UserProfileForm()
 
-    if request.method == 'POST':
+    if request.method == 'POST' form.validate_on_submit():
 
         fname = form.firstName.data
         lname =form.lastName.data
