@@ -13,7 +13,7 @@ from .models import UserProfile
 from .forms import UserProfileForm
 
 
-@app.route('/')
+@app.route('/',methods=['GET', 'POST'])
 def home():
     """Render website's home page."""
     return render_template('home.html')
