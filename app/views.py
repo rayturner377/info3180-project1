@@ -33,7 +33,7 @@ def about():
 def profile():
     form = UserProfileForm()
 
-    if request.method == 'POST' form.validate_on_submit():
+    if request.method == 'POST' and form.validate_on_submit():
 
         fname = form.firstName.data
         lname =form.lastName.data
